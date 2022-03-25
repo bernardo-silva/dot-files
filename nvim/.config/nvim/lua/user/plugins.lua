@@ -49,6 +49,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- Path completion
     use "hrsh7th/cmp-cmdline" -- Command completion
     use "saadparwaiz1/cmp_luasnip" -- Snipp completion
+    use "hrsh7th/cmp-nvim-lsp"
 
     --Snippets
     use "L3MON4D3/LuaSnip" -- snippet engine
@@ -57,8 +58,28 @@ return packer.startup(function(use)
     --Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        run = ":TSUpdate"
     }
+
+    --Telescope
+    use "nvim-telescope/telescope.nvim"
+
+    -- Comments
+    use 'numToStr/Comment.nvim'
+
+    -- Motion
+    use 'ggandor/lightspeed.nvim'
+
+    -- LSP
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+
+    use "smithbm2316/centerpad.nvim" -- Center nvim buffer
+    use "lukas-reineke/indent-blankline.nvim" -- Indent guides
+
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
