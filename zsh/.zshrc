@@ -127,8 +127,9 @@ export PATH="/opt/intel/oneapi/vtune/2022.1.0/bin64/:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=nvim
 
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 function o {
    if [ "$#" = 0 ]; then
@@ -157,7 +158,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias i3config='vim ~/.config/i3/config'
+alias i3config='nvim ~/.config/i3/config'
 
 alias lh='ls -lh'
 alias 'ls -l'='ls -lh'
@@ -171,4 +172,17 @@ function pdfcompress ()
     echo "$3"
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/"$1" –sOutputFile="$3" "$2"
 }
+
+alias coqide='GTK_THEME=Adwaita coqide'
+alias eclipse='GTK_THEME=Adwaita eclipse'
+
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gs='git status'
+alias gco='git checkout'
+alias gcom='git checkout main'
+
+
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

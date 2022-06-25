@@ -80,6 +80,13 @@ return packer.startup(function(use)
     use "smithbm2316/centerpad.nvim" -- Center nvim buffer
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
 
+    use "christoomey/vim-system-copy" -- Copy to system clipboard
+
+    use "vim-scripts/ReplaceWithRegister" --Replace without loosing yank
+
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
+    use "folke/which-key.nvim"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()

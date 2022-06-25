@@ -6,6 +6,8 @@ require "user.lsp"
 require "user.treesitter"
 require "user.telescope"
 require "user.comment"
+require "user.bufferline"
+-- require "user.whichkey"
 
 vim.g["neodark#background"] = "#1F1F1F"
 vim.cmd "colorscheme neodark"

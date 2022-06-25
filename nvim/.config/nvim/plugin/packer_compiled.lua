@@ -79,6 +79,16 @@ _G.packer_plugins = {
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ReplaceWithRegister = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
+    url = "https://github.com/vim-scripts/ReplaceWithRegister"
+  },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["centerpad.nvim"] = {
     loaded = true,
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/centerpad.nvim",
@@ -159,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -178,6 +193,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-system-copy"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/vim-system-copy",
+    url = "https://github.com/christoomey/vim-system-copy"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

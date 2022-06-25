@@ -316,7 +316,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec /usr/bin/brave
+bindsym $mod+w exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
 # bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 bindsym Print exec flameshot gui
@@ -450,6 +450,9 @@ exec --no-startup-id sleep 3 && megasync
 
 #Run Backup
 exec --no-startup-id sleep 60 && notify-send "Backup started" && ~/.config/i3/scripts/rclone_backup.sh;exec notify-send "Backup complete"
+
+#Low battery warning
+exec --no-startup-id ~/.config/i3/scripts/i3-battery-popup/i3-battery-popup -n -L 20
 
 # set floating (nontiling)for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
