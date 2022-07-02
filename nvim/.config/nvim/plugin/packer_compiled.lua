@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["neodark.vim"] = {
     loaded = true,
@@ -193,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/bs/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-system-copy"] = {
     loaded = true,

@@ -153,6 +153,7 @@ function sem {
         cd ~/Cloud/4_ano/2_semestre/"$1"
 }
 alias semestre=sem
+alias synb='cd ~/Cloud/synbitec/'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -174,7 +175,6 @@ function pdfcompress ()
 }
 
 alias coqide='GTK_THEME=Adwaita coqide'
-alias eclipse='GTK_THEME=Adwaita eclipse'
 
 alias ga='git add'
 alias gb='git branch'

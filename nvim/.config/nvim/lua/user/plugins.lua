@@ -69,6 +69,7 @@ return packer.startup(function(use)
 
     -- Motion
     use 'ggandor/lightspeed.nvim'
+    use "tpope/vim-repeat" -- Fixes repeat with lightspeed
 
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
@@ -84,9 +85,13 @@ return packer.startup(function(use)
 
     use "vim-scripts/ReplaceWithRegister" --Replace without loosing yank
 
-    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use "kyazdani42/nvim-web-devicons" -- Icons for bufferline and lualine
+    use {"akinsho/bufferline.nvim", tag = "v2.*"}
+    use "nvim-lualine/lualine.nvim"
 
     use "folke/which-key.nvim"
+
+    use 'lewis6991/impatient.nvim' -- faster load times
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
