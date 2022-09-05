@@ -91,7 +91,15 @@ return packer.startup(function(use)
 
     use "folke/which-key.nvim"
 
-    use 'lewis6991/impatient.nvim' -- faster load times
+    use "lewis6991/impatient.nvim" -- faster load times
+    
+    use 'sbdchd/neoformat' --autoformat
+    -- LaTeX
+    use {
+        "lervag/vimtex",
+        opt = true,
+        ft = {"tex"}
+    }
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()

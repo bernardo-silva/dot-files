@@ -114,13 +114,13 @@ typeset -A menu
 # Menu with keys/commands
 
 menu=(
-  [ Shutdown]="systemctl poweroff"
-  [ Reboot]="systemctl reboot"
-  [ Suspend]="~/.config/i3/scripts/blur-lock.sh && systemctl suspend"
-  [ Lock]="~/.config/i3/scripts/blur-lock.sh"
-  [ Logout]="i3-msg exit"
+  [ 1:Shutdown]="systemctl poweroff"
+  [ 2:Reboot]="systemctl reboot"
+  [ 3:Suspend]="~/.config/i3/scripts/blur-lock.sh && systemctl suspend"
+  [ 4:Lock]="~/.config/i3/scripts/blur-lock.sh"
+  [ 5:Logout]="i3-msg exit"
   # [ Logout]="xfce4-session-logout --logout"
-  [ Cancel]=""
+  [ 6:Cancel]=""
 )
 
 menu_nrows=${#menu[@]}
