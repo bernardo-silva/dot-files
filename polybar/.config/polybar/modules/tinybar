@@ -1,0 +1,10 @@
+#!/bin/bash
+u=$(xprop -name "Polybar tray window" _NET_WM_PID | grep -o '[[:digit:]]*')
+echo $u
+if [ $u -z ]
+then polybar tray &
+sleep 10
+u=$(xprop -name "Polybar tray window" _NET_WM_PID | grep -o '[[:digit:]]*')
+kill $u
+else kill $u
+fi
