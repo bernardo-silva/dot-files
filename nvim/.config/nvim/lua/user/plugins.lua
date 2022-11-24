@@ -101,6 +101,19 @@ return packer.startup(function(use)
         ft = {"tex"}
     }
 
+    use( "akinsho/toggleterm.nvim")
+
+    use( "tpope/vim-surround")
+     
+    use("AckslD/swenv.nvim")
+    use { "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" }
+
+    use 'preservim/tagbar' -- side bar with code structure
+
+    -- DAP
+    use "mfussenegger/nvim-dap"
+    use "rcarriga/nvim-dap-ui"
+    use "ravenxrz/DAPInstall.nvim"
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

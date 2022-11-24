@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-;background = #191919
-background = #000
+background = #121212
+;background = #000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -93,23 +93,23 @@ enable-ipc = true
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=11:antialias=true;1
+font-0 = sans:pixelsize=11:antialias=true;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=14;antialias=true;0
 font-3 = FontAwesome:style=Regular:pixelsize=11;1
 
 modules-left = i3
 modules-center = calendar date
-modules-right =  pulseaudio wlan eth battery temperature powermenu arrow
+modules-right =  pulseaudio wlan eth battery temperature powermenu
 
-tray-position = off
+tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+; override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -390,6 +390,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
+label-active-font=2
 battery = BAT0
 adapter = ADP1
 full-at = 98
@@ -400,11 +401,11 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " " 
+format-full-prefix = " " 
 format-full-prefix-foreground = #55aa55
 ; format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = a
+ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}

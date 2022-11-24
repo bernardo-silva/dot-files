@@ -3,9 +3,9 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:				"Sourcecode Pro Regular 10";
+    font:				"Roboto Regular 14";
     show-icons:				true;
-    icon-theme:				"Arc-X-D";
+    icon-theme:				"Mint-Y-Dark-Red";
     display-drun:			"Apps";
     drun-display-format:		"{name}";
     scroll-method:			0;
@@ -19,12 +19,12 @@ configuration {
 
 window {
     background-color: @background;
-    border:           0;
+    border:           1;
     padding:          10;
 }
 listview {
-    lines:                          10;
-    columns:                        3;
+    lines:                          8;
+    columns:                        2;
 }
 mainbox {
     border:  0;
@@ -42,7 +42,7 @@ listview {
     fixed-height: 0;
     border:       8px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      8px ;
+    spacing:      5px ;
     scrollbar:    false;
     padding:      2px 0px 0px ;
 }

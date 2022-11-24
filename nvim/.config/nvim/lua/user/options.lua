@@ -26,4 +26,6 @@ for key, value in pairs(options) do
     vim.opt[key] = value
 end
 
+vim.g.python3_host_prog = '/home/bs/.pyenv/versions/nvim/bin/python3.9'
+
 vim.cmd [[set iskeyword+=-]]
