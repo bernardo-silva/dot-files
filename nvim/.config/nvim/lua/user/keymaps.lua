@@ -11,6 +11,8 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("i", "jk", "<Esc>", opts)
+keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
 
 keymap("n", "gA", "$i", opts)
 
@@ -53,3 +55,7 @@ keymap("n", "<leader>rr", "<cmd>MagmaEvaluateLine<cr>", opts)
 -- TagBar
 -- keymap("n", "<leader>tt", "<cmd>TagbarToggle<cr>", opts)
 -- keymap("n", "<leader>tj", "<cmd>TagbarOpenAutoClose<cr>", opts)
+
+-- Oil.nvim
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+-- keymap("n", "-", ":require('oil').open<cr>", opts)-- { desc = "Open parent directory" })

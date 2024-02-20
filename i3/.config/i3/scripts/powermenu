@@ -116,7 +116,7 @@ typeset -A menu
 menu=(
   [ 1:Shutdown]="systemctl poweroff"
   [ 2:Reboot]="systemctl reboot"
-  [ 3:Suspend]="cinnamon-screensaver-command -l && systemctl suspend"
+  [ 3:Suspend]="~/.config/i3/scripts/blur-lock.sh && systemctl suspend"
   [ 4:Lock]="cinnamon-screensaver-command -l"
   [ 5:Logout]="i3-msg exit"
   # [ Logout]="xfce4-session-logout --logout"

@@ -15,7 +15,34 @@ end
 
 dap_install.setup({})
 
-dap_install.config("python", {})
+dap_install.config("python", {
+    configurations = {{
+        -- The first three options are required by nvim-dap
+        type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+        request = 'launch',
+        name = "Launch file",
+
+        justMyCode = false,
+        -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+
+        program = "${file}", -- This configuration will launch the current file if used.
+        pythonPath = function()
+          local venv_path = os.getenv('VIRTUAL_ENV') or os.getenv('CONDA_PREFIX')
+          if venv_path then
+            return venv_path .. '/bin/python'
+          end
+          if M.resolve_python then
+            assert(type(M.resolve_python) == "function", "resolve_python must be a function")
+            return M.resolve_python()
+          end
+          return nil
+        end
+          -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+          -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+          -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      },
+    }
+})
 dap_install.config("ccppr_vsc", {
     adapters = {
       id = 'cppdbg',

@@ -403,12 +403,13 @@ format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " " 
 format-full-prefix-foreground = #55aa55
+format-full-foreground = #55aa55
 ; format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.green}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -420,7 +421,7 @@ animation-charging-framerate = 900
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = ${colors.primary}
 animation-discharging-framerate = 750
 
 [module/temperature]

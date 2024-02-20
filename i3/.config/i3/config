@@ -47,16 +47,17 @@ workspace_layout default
 ##############################
 
 #border indicator on windows: 
-new_window pixel 1
-default_border pixel 3
+# new_window pixel 1
+default_border pixel 2
 
 
 # thin borders
-hide_edge_borders smart
+hide_edge_borders both
+smart_borders on
 
 # Set inner/outer gaps
-gaps inner 5
-gaps outer 0
+gaps inner 2
+gaps outer -2
 
 
 
@@ -75,30 +76,9 @@ bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
-
-# switch to workspace with numpad keys
-bindcode $mod+87 workspace 1
-bindcode $mod+88 workspace 2
-bindcode $mod+89 workspace 3
-bindcode $mod+83 workspace 4
-bindcode $mod+84 workspace 5
-bindcode $mod+85 workspace 6
-bindcode $mod+79 workspace 7
-bindcode $mod+80 workspace 8
-bindcode $mod+81 workspace 9
-bindcode $mod+90 workspace 10
-
-# switch to workspace with numlock numpad keys
-bindcode $mod+Mod2+87 workspace $ws1
-bindcode $mod+Mod2+88 workspace $ws2
-bindcode $mod+Mod2+89 workspace $ws3
-bindcode $mod+Mod2+83 workspace $ws4
-bindcode $mod+Mod2+84 workspace $ws5
-bindcode $mod+Mod2+85 workspace $ws6
-bindcode $mod+Mod2+79 workspace $ws7
-bindcode $mod+Mod2+80 workspace $ws8
-bindcode $mod+Mod2+81 workspace $ws9
-bindcode $mod+Mod2+90 workspace $ws10
+bindsym $mod+o    workspace  $wsobsidian
+bindsym $mod+c    workspace  $wschat
+bindsym $mod+s    workspace  $wsspotify
 
 
 # move focused container to workspace
@@ -112,6 +92,7 @@ bindsym $mod+Shift+7    move container to workspace  $ws7
 bindsym $mod+Shift+8    move container to workspace  $ws8
 bindsym $mod+Shift+9    move container to workspace  $ws9
 bindsym $mod+Shift+0    move container to workspace  $ws10
+bindsym $mod+Shift+c    move container to workspace  $wschat
 
 # move focused container to workspace and focus workspace
 bindsym $mod+Ctrl+1    move container to workspace  $ws1;workspace $ws1
@@ -124,32 +105,7 @@ bindsym $mod+Ctrl+7    move container to workspace  $ws7;workspace $ws7
 bindsym $mod+Ctrl+8    move container to workspace  $ws8;workspace $ws8
 bindsym $mod+Ctrl+9    move container to workspace  $ws9;workspace $ws9
 bindsym $mod+Ctrl+0    move container to workspace  $ws10;workspace $ws10
-bindsym $mod+Ctrl+n    move container to workspace  next;workspacenext
-bindsym $mod+Ctrl+p    move container to workspace  prev;workspaceprev
-
-# move focused container to workspace with numpad keys
-bindcode $mod+Shift+Mod2+87 	move container to workspace  $ws1
-bindcode $mod+Shift+Mod2+88 	move container to workspace  $ws2
-bindcode $mod+Shift+Mod2+89 	move container to workspace  $ws3
-bindcode $mod+Shift+Mod2+83 	move container to workspace  $ws4
-bindcode $mod+Shift+Mod2+84 	move container to workspace  $ws5
-bindcode $mod+Shift+Mod2+85 	move container to workspace  $ws6
-bindcode $mod+Shift+Mod2+79 	move container to workspace  $ws7
-bindcode $mod+Shift+Mod2+80 	move container to workspace  $ws8
-bindcode $mod+Shift+Mod2+81 	move container to workspace  $ws9
-bindcode $mod+Shift+Mod2+90 	move container to workspace  $ws10
-
-# move focused container to workspace with numpad keys
-bindcode $mod+Shift+87 	 move container to workspace  $ws1
-bindcode $mod+Shift+88 	 move container to workspace  $ws2
-bindcode $mod+Shift+89 	 move container to workspace  $ws3
-bindcode $mod+Shift+83 	 move container to workspace  $ws4
-bindcode $mod+Shift+84 	 move container to workspace  $ws5
-bindcode $mod+Shift+85 	 move container to workspace  $ws6
-bindcode $mod+Shift+79 	 move container to workspace  $ws7
-bindcode $mod+Shift+80 	 move container to workspace  $ws8
-bindcode $mod+Shift+81 	 move container to workspace  $ws9
-bindcode $mod+Shift+90 	 move container to workspace  $ws10
+bindsym $mod+Ctrl+c    move container to workspace  $wschat;workspace $wschat
 
 # resize window (you can also use the mouse for that):
 mode "resize" {
@@ -191,27 +147,32 @@ bindsym $mod+r mode "resize"; exec notify-send "Resize mode"
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+q kill
 
 #l exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+# bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+bindsym $mod+Shift+e exec xfce4-session-logout
+
+#Suspend
+bindsym $mod+Shift+s exec xfce4-session-logout -s
 
 # Lock the system
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-# bindsym $mod+x exec ~/.config/i3/scripts/blur-lock.sh
-bindsym $mod+x exec cinnamon-screensaver-command -l
+bindsym $mod+x exec xflock4
+
+# bindsym $mod+x exec cinnamon-screensaver-command -l
 # bindsym $mod+x exec xfce4-session-logout -s
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+Ctrl+r restart
 
 # open i3 config in vim:
 bindsym $mod+F1 exec xfce4-terminal -e "vim /home/bs/.config/i3/config"
@@ -287,6 +248,8 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMI
 #Touchpad
 bindsym $mod+Shift+t exec ~/.config/i3/scripts/toggletouchpad.sh
 
+#Calculator
+bindsym $mod+equal exec gnome-calculator
 
 # Pulse Audio controls
 
@@ -316,9 +279,13 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox
-bindsym $mod+n exec /usr/bin/nemo
+bindsym $mod+n exec /usr/bin/thunar
 # bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 bindsym Print exec flameshot gui
+
+# Change monitor layout
+bindsym $mod+s+1 exec ~/.config/screenlayout/one-monitor.sh
+bindsym $mod+s+2 exec ~/.config/screenlayout/two-monitors.sh
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -333,9 +300,12 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 ""
-set $ws9 ""
+set $ws8 "8"
+set $ws9 "9"
 set $ws10 "10"
+set $wschat ""
+set $wsobsidian ""
+set $wsspotify ""
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays 
@@ -349,21 +319,23 @@ workspace $ws8 output eDP-1
 workspace $ws9 output eDP-1
 
 # move the whole workspace to the next output
-bindsym $mod+m move workspace to output left
+bindsym $mod+m move workspace to output next
+
+bindsym $mod+BackSpace exec ~/.config/i3/scripts/swap-monitors.sh
 
 # bind program to workspace and focus to them on startup:
 #assign [class="Xfce4-terminal"] $ws1
 #assign [class="(?i)firefox"] $ws2
 #assign [class="Thunar"] $ws3
 #assign [class="Thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
-assign [title="Signal"] $ws8
-assign [class="spotify"] $ws9
+assign [title="obsidian"] $wsobsidian
+assign [title="Signal"] $wschat
+assign [class="Telegram"] $wschat
+assign [class="Spotify"] $wsspotify
 
 
 
 # automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 #for_window [class=Thunar] focus
 #for_window [class=Thunderbird] focus
@@ -379,13 +351,23 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 for_window [class="MEGAsync$"] floating enable
+#for_window [class="[Xfce4]+"] floating enable
+# for_window [class="^Xfce4-settings.*"] floating enable
+for_window [class="^Xfce4-.*settings.*"] floating enable
+for_window [class="^Xfce4-panel.*"] floating enable
+for_window [class="^Xfce4-appfinder$"] floating enable
+for_window [class="^Xfce4-taskmanager"] floating enable
+for_window [class="^Blueman-manager$"] floating enable
+for_window [class="^MintUpdate.py$"] floating enable
+for_window [class=Xfce4-terminal] focus 
+for_window [title="^zoom$" class="[zoom]*"] floating enable
 
 #############################################
 # autostart applications/services on login: #
 #############################################
 
 #get auth work with polkit-gnome
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # dex execute .desktop files
 # keep in mind that it can cause issues 
@@ -402,60 +384,58 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec_always --no-startup-id ~/.config/screenlayout/monitor.sh
+# exec_always --no-startup-id ~/.config/screenlayout/monitor.sh
 
 #Exec polybar
-exec_always --no-startup-id ~/.config/i3/scripts/launch_polybar.sh 
+# exec_always --no-startup-id ~/.config/i3/scripts/launch_polybar.sh 
 
 # start blueberry app for managing bluetooth devices from tray:
-exec --no-startup-id blueberry-tray
-
+# exec --no-startup-id blueberry-tray
 
 #networkmanager-applet
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # set wallpaper
 #exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/Wallpapers/poly.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/Wallpapers/teal-mountain.jpg
 
 #set powersavings for display:
-exec --no-startup-id xset -b s 480 dpms 600 600 600
-
-
+# exec --no-startup-id xset -b s 480 dpms 600 600 600
 
 # Desktop notifications
-exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+# exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 #Hide mouse when it is not being used
 exec_always --no-startup-id unclutter
 
-
 #transparency 
 # exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-exec_always --no-startup-id picom -CGb
+exec_always --no-startup-id picom -CGb 
+# --config ~/.config/picom/picom.conf
 
 #Autotiling
 exec --no-startup-id autotiling
 
 #Hide Panel
+exec --no-startup-id pkill -f i3-workspaces
 # exec_always --no-startup-id killall xfce4-panel
 
 #Remap capslock
-exec_always --no-startup-id .config/i3/scripts/map-capslock.sh
+exec_always --no-startup-id ~/.config/keyboard-mappings/remap-capslock.sh
 
 
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
 #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 # exec --no-startup-id sleep 3 && insync start
-exec --no-startup-id redshift -l 38.7254:-9.1408
-exec --no-startup-id sleep 3 && megasync
+# exec --no-startup-id redshift -l 38.7254:-9.1408
+# exec --no-startup-id sleep 3 && megasync
 
 #Run Backup
 # exec --no-startup-id sleep 60 && notify-send "Backup started" && ~/.config/i3/scripts/rclone_backup.sh;exec notify-send "Backup complete"
 
 #Low battery warning
-exec --no-startup-id ~/.config/i3/scripts/i3-battery-popup/i3-battery-popup -n -L 20
+# exec --no-startup-id ~/.config/i3/scripts/i3-battery-popup -n -L 20
 
 # set floating (nontiling)for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -487,12 +467,14 @@ set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
 set $aliz	        #F0544C
+set $teal	        #199CA8
+set $darkteal	        #014d4e
 set $red	        #F03232
 set $gray1F             #1F1F1F
 
 # define colors for windows:
 #class		            border	bground		text		indicator	child_border
-client.focused		    $aliz   	$darkblue	$white		$red		$aliz
+client.focused		    $teal   	$darkblue	$white $red            $teal
 client.unfocused	    $darkblue	$darkblue	$grey		$red		$darkgrey
 client.focused_inactive     $darkblue	$darkblue	$grey		$red		$black
 client.urgent		    $urgentred	$urgentred	$white		$red		$yellowbrown
@@ -506,10 +488,10 @@ client.background    #1F1F1F
 
 ## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
-bindsym $mod+d exec rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
-                
-		
+# bindsym $mod+d exec ulauncher
+# bindsym $mod+d exec xfce4-appfinder --collapsed
+bindsym $mod+d exec rofi -modi drun -show drun -matching fuzzy -config ~/.config/rofi/rofidmenu.rasi
+
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
 bindsym $mod+t exec rofi -show window \

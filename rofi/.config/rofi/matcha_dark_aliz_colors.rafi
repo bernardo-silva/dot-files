@@ -20,7 +20,7 @@
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 240, 84, 76, 100 % );
+    selected-normal-background:  rgba ( 25, 156, 168, 100 % );
     border-color:                rgba ( 124, 131, 137, 100 % );
     spacing:                     2;
     separatorcolor:              rgba ( 29, 31, 33, 100 % );
@@ -30,5 +30,5 @@
     background-color:            rgba ( 0, 0, 0, 0 % );
     alternate-active-foreground: @active-foreground;
     active-background:           rgba ( 29, 31, 33, 17 % );
-    selected-active-background:  rgba ( 68, 145, 237, 100 % );
+    selected-active-background:  rgba ( 0, 0, 0, 100 % );
 }
