@@ -174,17 +174,5 @@ function pdfcompress ()
     fi
     echo "$3"
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/"$1" –sOutputFile="$3" "$2"
-}
-
-alias coqide='GTK_THEME=Adwaita coqide'
-
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gst='git status'
-alias gco='git checkout'
-alias gcom='git checkout main'
-
-
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
